@@ -39,7 +39,7 @@ function swingtheta()
     xlim([0 5])
     xlabel('time (s)','FontSize',16)
     ylabel('energy (J)','FontSize',16)
-    legend('total energy','potential enegry','kinetic energy','FontSize',16)
+    legend('total energy','potential enery','kinetic energy','FontSize',16)
     title('Energy Validation of Pendulum without Variation in Length')
 
 %%
