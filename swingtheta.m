@@ -2,7 +2,7 @@ function swingtheta()
     g = 10;
     l = 5;
     m = 1;
-    beta = 0;
+    beta = 1/10;
     omega = sqrt(g/l);
     a = 2;
  
@@ -31,16 +31,16 @@ function swingtheta()
 %     plot(thetas,PE)
 %     subplot(1,3,3)
 %%  Energy Validation Plotting Code
-    hold on
-    plot(t, PE+KE,'Color','b','LineWidth',3)
-    plot(t,PE,'Color','g','LineWidth',3)
-    plot(t, KE,'Color','m','LineWidth',3)
-    ylim([-12 4])
-    xlim([0 5])
-    xlabel('time (s)','FontSize',16)
-    ylabel('energy (J)','FontSize',16)
-    legend('total energy','potential enery','kinetic energy','FontSize',16)
-    title('Energy Validation of Pendulum without Variation in Length')
+%     hold on
+%     plot(t, PE+KE,'Color','b','LineWidth',3)
+%     plot(t,PE,'Color','g','LineWidth',3)
+%     plot(t, KE,'Color','m','LineWidth',3)
+%     ylim([-12 4])
+%     xlim([0 5])
+%     xlabel('time (s)','FontSize',16)
+%     ylabel('energy (J)','FontSize',16)
+%     legend('total energy','potential enery','kinetic energy','FontSize',16)
+%     title('Energy Validation of Pendulum without Variation in Length')
 
 %%
 
@@ -71,13 +71,13 @@ function swingtheta()
     end
 
     function res = radius(t)
-       res = 1;
-        %res = beta * l * cos(a * omega * t + theta_init) + l; 
+       %res = 1;
+        res = beta * l * cos(a * omega * t + theta_init) + l; 
     end
 
     function res = r_dot(t)
-       res = 0;
-        %res = -beta * l * a * omega * sin(a * omega * t + theta_init); 
+       %res = 0;
+        res = -beta * l * a * omega * sin(a * omega * t + theta_init); 
     end
  
     function draw_func(x1, y1)
