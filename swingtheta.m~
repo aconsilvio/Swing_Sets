@@ -30,20 +30,16 @@ function swingtheta()
 %     subplot(1,3,2)
 %     plot(thetas,PE)
 %     subplot(1,3,3)
-%%  Energy Validation Plotting Code
     hold on
-    plot(t, PE+KE,'Color','b','LineWidth',3)
-    plot(t,PE,'Color','g','LineWidth',3)
-    plot(t, KE,'Color','m','LineWidth',3)
+    plot(t, PE+KE,'Color','b')
+    plot(t,PE,'Color','g')
+    plot(t, KE,'Color','m')
     ylim([-12 4])
     xlim([0 5])
-    xlabel('time (s)','FontSize',16)
-    ylabel('energy (J)','FontSize',16)
-    legend('total energy','potential enegry','kinetic energy','FontSize',16)
-    title('Energy Validation of Pendulum without Variation in Length')
-
-%%
-
+    xlabel('time (s)')
+    ylabel('energy (J)')
+    legend('total energy','potential enegry','kinetic energy')
+    title('Energy Validation of Pen
 %     plot(t, Y1);
 
 %     subplot(1, 2, 1)
@@ -54,6 +50,8 @@ function swingtheta()
 %     for i=1:length(X1)
 %        draw_func(X1(i), Y1(i));
 %     end
+
+ 
     function W = rate_func(t, I)
         theta = I(1);
         thetadot = I(2);
