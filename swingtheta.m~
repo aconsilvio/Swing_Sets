@@ -1,16 +1,16 @@
 function swingtheta()
     g = 10;
-    l = 1.7;
+    l = 5;
     m = 1;
     beta = .04;
     omega = sqrt(g/l);
     a = 2;
-    data = load('SwingData2_2.csv');
+    data = load('SwingData2.csv');
     time = data(:,1);
     x_center = data(:,2);
     y_center = data(:,3);
 
-    theta_init = -.5896+3*pi/2;
+    theta_init = -pi/4;
 
  
     thetadot_init = 0;
@@ -56,10 +56,9 @@ function swingtheta()
       for i=1:length(x_center)
          len(i) = sqrt(x_center(i)^2 + y_center(i)^2);
       end
-      hold on
       plot(t, radius(t))
       plot(time, len,'LineWidth',2)
-      xlim([0 12])
+      xlim([0
       xlabel('Time (s)','FontSize',16)
       ylabel('Length of Swing (m)','FontSize',16)
       title('Length of the Pendulum as a function of time','FontSize',20)
