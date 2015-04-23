@@ -14,6 +14,8 @@ function res = swing_experiments()
 %     title('Height of COM on Swing Over Time','FontSize',20)
 %     xlabel('time (s)','FontSize',16)
 %     ylabel('height (m)','FontSize',16)
+
+    atan(x_center(1)/y_center(1))
     
     %plot(time, atan(x_center/y_center))
     %title('Theta over Time')

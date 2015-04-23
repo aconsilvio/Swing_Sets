@@ -2,12 +2,12 @@ function swingtheta()
     g = 10;
     l = 5;
     m = 1;
-    beta = 0;
+    beta = 0.04;
     omega = sqrt(g/l);
     a = 2;
  
-    theta_init = -pi/4;
-
+    %theta_init = 4.1228;
+    theta_init = 3*pi/2+.01;
  
     thetadot_init = 0;
 
@@ -31,29 +31,32 @@ function swingtheta()
 %     plot(thetas,PE)
 %     subplot(1,3,3)
 %%  Energy Validation Plotting Code
-    hold on
-    plot(t, PE+KE,'Color','b','LineWidth',3)
-    plot(t,PE,'Color','g','LineWidth',3)
-    plot(t, KE,'Color','m','LineWidth',3)
-    ylim([-12 4])
-    xlim([0 5])
-    xlabel('time (s)','FontSize',16)
-    ylabel('energy (J)','FontSize',16)
-    legend('total energy','potential enery','kinetic energy','FontSize',16)
-    title('Energy Validation of Pendulum without Variation in Length')
+
+%     hold on
+%     plot(t, PE+KE,'Color','b','LineWidth',3)
+%     plot(t,PE,'Color','g','LineWidth',3)
+%     plot(t, KE,'Color','m','LineWidth',3)
+%     ylim([-12 4])
+%     xlim([0 5])
+%     xlabel('time (s)','FontSize',16)
+%     ylabel('energy (J)','FontSize',16)
+%     legend('total energy','potential enery','kinetic energy','FontSize',16)
+%     title('Energy Validation of Pendulum without Variation in Length')
 
 %%
 
-%     plot(t, Y1);
+    plot(t, Y1);
 
 %     subplot(1, 2, 1)
-%     plot(t, radius(t))
+    %plot(t, radius(t), 'g', 'Linewidth', 2)
+    
 %     subplot(1, 2, 2)
 %     plot(t, thetas)
 
 %     for i=1:length(X1)
 %        draw_func(X1(i), Y1(i));
 %     end
+    
     function W = rate_func(t, I)
         theta = I(1);
         thetadot = I(2);
@@ -71,13 +74,13 @@ function swingtheta()
     end
 
     function res = radius(t)
-       res = 1;
-        %res = beta * l * cos(a * omega * t + theta_init) + l; 
+%        res = 1;
+        res = beta * l * cos(a * omega * t + theta_init) + l; 
     end
 
     function res = r_dot(t)
-       res = 0;
-        %res = -beta * l * a * omega * sin(a * omega * t + theta_init); 
+%        res = 0;
+        res = -beta * l * a * omega * sin(a * omega * t + theta_init); 
     end
  
     function draw_func(x1, y1)

@@ -7,7 +7,7 @@ function res = swingthetasweep(omega)
     %a = 2;
     a = 1;
  
-    theta_init = -pi/4;
+    theta_init = -0.5896;
 
  
     thetadot_init = 0;
