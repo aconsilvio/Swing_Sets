@@ -37,7 +37,7 @@ function res = swing_experiments()
         len(i) = sqrt(x_center(i)^2 + y_center(i)^2);
     end
 
-    plot(time, len,'LineWidth',2)
+    plot(time, len,'LineWidth',3)
     xlabel('Time (s)','FontSize',16)
     ylabel('Length of Swing (m)','FontSize',16)
     title('Length of the Pendulum as a function of time','FontSize',20)
