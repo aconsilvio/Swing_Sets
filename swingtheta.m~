@@ -34,10 +34,7 @@ function swingtheta()
     hold on;
     plot(t, X1, 'LineWidth', 3)
     plot(t, 3 * cos(omega*t), 'r', 'LineWidth', 3)
-    title('Examination of Frequency of Driven Pendulum', 'FontSize', 18)
-    ylabel('Amplitude', 'FontSize', 14)
-    xlabel('Time', 'FontSize', 14)
-    legend('Oscillation in X Position of Swing', 'Cosine Wave oscillating at natural frequency')
+    title('Frequency of Swing ve')
     
     %plot(t, thetadots)
     

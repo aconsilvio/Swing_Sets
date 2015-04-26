@@ -41,9 +41,9 @@ function res = swingthetasweep(omega)
 %     subplot(1, 2, 2)
 %     plot(t, thetas)
 
-    for i=1:length(X1)
-       draw_func(X1(i), Y1(i));
-    end
+%     for i=1:length(X1)
+%        draw_func(X1(i), Y1(i));
+%     end
 
  
     function W = rate_func(t, I)
