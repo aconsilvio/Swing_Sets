@@ -3,17 +3,18 @@ function swingtheta()
     l = 1.7;
     m = 1;
     beta = 0.04;
-    omega = sqrt(g/l);
+%     omega = sqrt(g/l);
+    omega = 2.3649;
     a = 2;
  
-    theta_init = 4.1228;
-    %theta_init = -pi/4;
+    %theta_init = 4.1228;
+    theta_init = -pi/4;
  
     thetadot_init = 0;
 
     options = odeset('reltol', 1e-8);
     
-    [t, M] = ode45(@rate_func, [0:.002:12], [theta_init, thetadot_init], options);
+    [t, M] = ode45(@rate_func, [0:.002:80], [theta_init, thetadot_init], options);
     
     thetas = M(:, 1);
     thetadots = M(:, 2);
@@ -31,16 +32,16 @@ function swingtheta()
 %         end
     end
     
-    plot(t, radius(t), 'r', 'LineWidth', 3)
-    legend('Actual', 'Experimental')
+%     plot(t, radius(t), 'r', 'LineWidth', 3)
+%     legend('Actual', 'Experimental')
    
-%     hold on;
-%     plot(t, X1, 'LineWidth', 3)
-%     plot(t, 3 * cos(omega*t), 'r', 'LineWidth', 3)
-%     title('Examination of Frequency of Driven Pendulum', 'FontSize', 18)
-%     ylabel('Amplitude', 'FontSize', 14)
-%     xlabel('Time', 'FontSize', 14)
-%     legend('Oscillation in X Position of Swing', 'Cosine Wave oscillating at natural frequency')
+    hold on;
+    plot(t, thetas, 'LineWidth', 3)
+    plot(t, cos(omega*t)-1.5, 'r', 'LineWidth', 3)
+    title('Examination of Frequency of Driven Pendulum', 'FontSize', 18)
+    ylabel('Amplitude', 'FontSize', 14)
+    xlabel('Time', 'FontSize', 14)
+    legend('Oscillation in Swing', 'Cosine Wave oscillating at ideal frequency')
     
     %plot(t, thetadots)
     
