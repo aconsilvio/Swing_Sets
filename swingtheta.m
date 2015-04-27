@@ -3,8 +3,8 @@ function swingtheta()
     l = 1.7;
     m = 1;
     beta = 0.04;
-%     omega = sqrt(g/l);
-    omega = 2.3649;
+    omega = sqrt(g/l)
+    %omega = 2.3649;
     a = 2;
  
     %theta_init = 4.1228;
@@ -41,7 +41,7 @@ function swingtheta()
     title('Examination of Frequency of Driven Pendulum', 'FontSize', 18)
     ylabel('Amplitude', 'FontSize', 14)
     xlabel('Time', 'FontSize', 14)
-    legend('Oscillation in Swing', 'Cosine Wave oscillating at ideal frequency')
+    legend('Oscillation in Swing', 'Cosine Wave oscillating at natural frequency')
     
     %plot(t, thetadots)
     

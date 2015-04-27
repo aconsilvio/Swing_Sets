@@ -3,7 +3,7 @@ function res = swingthetasweep(omega)
     l = 5;
     m = 1;
     beta = 1/10;
-    %omega = sqrt(g/l);
+    %omega = sqrt(g/l)
     %a = 2;
     a = 1;
  
@@ -17,13 +17,13 @@ function res = swingthetasweep(omega)
     [t, M] = ode45(@rate_func, [0:.002:50], [theta_init, thetadot_init], options);
     
     thetas = M(:, 1);
-    thetadots = M(:, 2);
+%     thetadots = M(:, 2);
 
     for x=1:length(thetas)
-        X1(x) = radius(t(x)) * cos(thetas(x));
+%         X1(x) = radius(t(x)) * cos(thetas(x));
         Y1(x) = radius(t(x)) * sin(thetas(x));
-        KE(x) = 1/2 * m * radius(t(x))^2*thetadots(x)^2 ;%(r_dot(t(x))^2+radius(t(x))^2 * thetadots(x)^2);
-        PE(x) = m * g * radius(t(x)) * sin(thetas(x));
+%         KE(x) = 1/2 * m * radius(t(x))^2*thetadots(x)^2 ;%(r_dot(t(x))^2+radius(t(x))^2 * thetadots(x)^2);
+%         PE(x) = m * g * radius(t(x)) * sin(thetas(x));
     end
 
     res = Y1;
